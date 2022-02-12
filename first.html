@@ -1,48 +1,30 @@
 <!DOCTYPE HTML>
 <html>
 
+<head>
+    <title>testing...</title>
+    <style>
+        * {
+            padding: 5;
+            margin: 5
+        }
+        
+        canvas {
+            background-color: wheat;
+            display: block;
+            margin: 0 auto
+        }
+    </style>
+</head>
+
 <body>
 
     <p>Before the script...</p>
+    <canvas id="board" width="500" , height="2000"></canvas>
 
     <script>
-        "use strict";
-
-
-        let result = null;
-        while (result == null) {
-            result = prompt("how are you doing", "default");
-        }
-
-        let b = confirm("is it ok?");
-        if (b) {
-            alert("ok");
-        } else {
-            alert("no");
-        }
-
-        let name;
-        do {
-            name = prompt("your name?")
-            if (name == null) {
-                alert("true");
-            }
-        } while (name == null);
-        sayHello(name);
-
-        let hello = sayHello;
-        hello("from variable");
-        alert(hello);
-
-
-        let arrow = () => alert("Hello");
-        arrow();
-
-        function sayHello(str) {
-            alert(`hello, ${str}`);
-        }
     </script>
-    <!-- <script src="./script.js"></script> -->
+    <script src="./canvas.js"></script>
 
     <p>... After the script</p>
 
