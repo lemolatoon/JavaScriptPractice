@@ -1,6 +1,22 @@
-main()
+"use strict";
+// Initialization
+const canvas = document.getElementById("board");
+const context = canvas.getContext("2d");
+const canvasWidth = canvas.clientWidth;
+const canvasHeight = canvas.clientHeight;
 
-function main() {
+// r g b a
+export const I_COLOER = [0x7f, 0xff, 0xd4, 0xff];
+export const O_COLOR = [0xff, 0xff, 0x00, 0xff];
+export const T_COLOR = [0x99, 0x32, 0xcc, 0xff];
+export const J_COLOR = [0x00, 0x00, 0xcd, 0xff];
+export const L_COLOR = [0xff, 0x8c, 0x00, 0xff];
+export const S_COLOR = [0x00, 0xff, 0x7f, 0xff];
+export const Z_COLOR = [0xff, 0x63, 0x47, 0xff];
+
+sample()
+
+function sample() {
     // Initialization
     let canvas = document.getElementById("board");
     let ctx = canvas.getContext("2d");
@@ -36,11 +52,11 @@ function main() {
             array[i][j] = green;
         }
     }
-    draw_pixcels(ctx, canvasWidth, canvasHeight, array, 100, 390);
+    draw_pixcels(array, 100, 390);
 
 }
 
-function draw_pixcels(context, canvasWidth, canvasHeight, array, x_start, y_start) {
+export function draw_pixcels(array, x_start, y_start) {
     // array[x][y][c]
     const imageData = context.getImageData(0, 0, canvasWidth, canvasHeight);
     const pixels = imageData.data;
