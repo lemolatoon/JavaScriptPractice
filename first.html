@@ -24,8 +24,19 @@
         let name;
         do {
             name = prompt("your name?")
+            if (name == null) {
+                alert("true");
+            }
         } while (name == null);
         sayHello(name);
+
+        let hello = sayHello;
+        hello("from variable");
+        alert(hello);
+
+
+        let arrow = () => alert("Hello");
+        arrow();
 
         function sayHello(str) {
             alert(`hello, ${str}`);
