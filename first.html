@@ -7,13 +7,29 @@
 
     <script>
         "use strict";
-        let msg = "hello";
-        alert("There will be an error");
-        alert(msg);
 
-        let x;
-        alert(x);
-        // undefined
+
+        let result = null;
+        while (result == null) {
+            result = prompt("how are you doing", "default");
+        }
+
+        let b = confirm("is it ok?");
+        if (b) {
+            alert("ok");
+        } else {
+            alert("no");
+        }
+
+        let name;
+        do {
+            name = prompt("your name?")
+        } while (name == null);
+        sayHello(name);
+
+        function sayHello(str) {
+            alert(`hello, ${str}`);
+        }
     </script>
     <!-- <script src="./script.js"></script> -->
 
